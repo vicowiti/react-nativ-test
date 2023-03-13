@@ -1,6 +1,9 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import React from "react";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+} from "@react-navigation/drawer";
 import Home from "./private/Home";
 import Staff from "./private/Staff";
 import Continents from "./private/Continents";
@@ -8,13 +11,64 @@ import Logout from "./private/Logout";
 
 const Drawer = createDrawerNavigator();
 
+// const CustomDrawerContent = (props: any) => {
+//   return (
+//     <DrawerContentScrollView {...props} st>
+//       <View>
+//
+//
+//       </View>
+//     </DrawerContentScrollView>
+//   );
+// };
+
 const MyDrawer = () => {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Staff" component={Staff} />
-      <Drawer.Screen name="Continents" component={Continents} />
-      <Drawer.Screen name="Logout" component={Logout} />
+    <Drawer.Navigator
+      //   drawerContent={(props) => <CustomDrawerContent {...props} />}
+      initialRouteName="Home"
+    >
+      <Drawer.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: "Zamara App",
+          headerStyle: {
+            backgroundColor: "#1F1F3d",
+          },
+          headerTintColor: "#FFF",
+        }}
+      />
+      <Drawer.Screen
+        name="Staff"
+        component={Staff}
+        options={{
+          headerStyle: {
+            backgroundColor: "#1F1F3d",
+          },
+          headerTintColor: "#FFF",
+        }}
+      />
+      <Drawer.Screen
+        name="Continents"
+        component={Continents}
+        options={{
+          headerStyle: {
+            backgroundColor: "#1F1F3d",
+          },
+          headerTintColor: "#FFF",
+        }}
+      />
+      <Drawer.Screen
+        name="Logout"
+        component={Logout}
+        options={{
+          headerStyle: {
+            backgroundColor: "#1F1F3d",
+          },
+          headerTintColor: "#FFF",
+        }}
+      />
     </Drawer.Navigator>
   );
 };

@@ -11,6 +11,7 @@ import { AppDispatch, RootState } from "../redux/store";
 import { loginUser } from "../redux/slices/authSlice";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Spinner from "../components/Spinner";
+import { storeData } from "../utils/storage/AsyncItems";
 
 const validationSchema = Yup.object({
   username: Yup.string().required("Username is required"),
@@ -74,10 +75,9 @@ const LoginScreen = () => {
               })
             );
             if (user) {
-              console.log(user);
+              console.log(user.id);
 
               try {
-                await AsyncStorage.setItem("userId", String(user.id));
                 navigate.navigate("MyDrawer" as never);
               } catch (error) {
                 console.log("Something went wrong");
