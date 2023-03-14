@@ -8,6 +8,7 @@ import Home from "./private/Home";
 import Staff from "./private/Staff";
 import Continents from "./private/Continents";
 import Logout from "./private/Logout";
+import StaffTab from "./StaffTab";
 
 const Drawer = createDrawerNavigator();
 
@@ -40,8 +41,8 @@ const MyDrawer = () => {
         }}
       />
       <Drawer.Screen
-        name="Staff"
-        component={Staff}
+        name="StaffTab"
+        component={StaffTab}
         options={{
           headerStyle: {
             backgroundColor: "#1F1F3d",
