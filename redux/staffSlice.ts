@@ -30,12 +30,10 @@ const initialState: InitialState = {
   staffData: null,
 };
 
-const url = "https://crudcrud.com/api/4202e3bd5b864491992dcf974f72349c/zamara";
+const url = "https://crudcrud.com/api/8127a2defb7142019dff8c390672fa59/zamara";
 
 export const getAllStaff = createAsyncThunk("/getAllStaff", async () => {
-  const response = await axios.get(
-    "https://crudcrud.com/api/4202e3bd5b864491992dcf974f72349c/zamara"
-  );
+  const response = await axios.get(url);
 
   return response.data;
 });
@@ -43,10 +41,7 @@ export const getAllStaff = createAsyncThunk("/getAllStaff", async () => {
 export const createStaff = createAsyncThunk(
   "/createStaff",
   async (data: InitStaff) => {
-    const response = await axios.post(
-      "https://crudcrud.com/api/4202e3bd5b864491992dcf974f72349c/zamara",
-      data
-    );
+    const response = await axios.post(url, data);
 
     return response.data;
   }

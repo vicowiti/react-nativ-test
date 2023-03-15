@@ -15,7 +15,7 @@ const Logout = () => {
   return (
     <View
       style={{
-        backgroundColor: "#5a6186",
+        backgroundColor: "#fff",
         height: "100%",
         justifyContent: "center",
         alignItems: "center",
@@ -23,7 +23,7 @@ const Logout = () => {
       }}
     >
       <View style={{ alignItems: "center", gap: 20 }}>
-        <Text style={{ color: "#fff", fontWeight: "800", fontSize: 20 }}>
+        <Text style={{ color: "#1F1F3D", fontWeight: "800", fontSize: 20 }}>
           Confirm Logout
         </Text>
 

@@ -1,22 +1,33 @@
-import { AxiosRequestConfig } from "axios";
-import axios from "axios";
-import X2JS from "x2js";
+import React, { useState, useEffect } from "react";
+import xml2js from "xml2js";
 
-export const xmlToJson = async () => {
-  let x2js = new X2JS();
-  const config: AxiosRequestConfig<any> = {
-    headers: {
-      "Content-Type": "application/xml; charset=utf-8",
-    },
-  };
-  const response = await axios.get(
-    "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfContinentsByCode",
-    config
-  );
+export function useXML() {
+  const [continentData, setContinentData] = useState([]);
 
-  const json = x2js.xml2js(response.data);
+  useEffect(() => {
+    fetch(
+      "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfContinentsByCode"
+    )
+      .then((response) => response.text())
+      .then((xml) => {
+        const parser = new xml2js.Parser({
+          explicitArray: false,
+          mergeAttrs: true,
+        });
+        parser.parseString(xml, (error, result) => {
+          if (error) {
+            console.error(error);
+          } else {
+            setContinentData(result);
+            const json = JSON.stringify(result);
+            console.log("resultjson", json);
+          }
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-  return json;
-};
-
-console.log(xmlToJson());
+  return continentData;
+}

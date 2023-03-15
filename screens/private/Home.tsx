@@ -38,13 +38,13 @@ const Home = () => {
   };
 
   return (
-    <ScrollView style={{ backgroundColor: "#5a6186" }}>
+    <ScrollView style={{ backgroundColor: "#fff" }}>
       <View style={{ minHeight: "100%" }}>
         {/* welcome View */}
         <View
           style={{
             height: 140,
-            backgroundColor: "#323761",
+            backgroundColor: "#fff",
             marginVertical: 5,
             marginHorizontal: 5,
             borderRadius: 10,
@@ -55,12 +55,12 @@ const Home = () => {
           }}
         >
           <View>
-            <Text style={{ color: "#FFF", fontWeight: "800", fontSize: 30 }}>
+            <Text style={{ color: "#43AE37", fontWeight: "800", fontSize: 30 }}>
               WELCOME
             </Text>
             <Text
               style={{
-                color: "#9CA3AF",
+                color: "#43AE37",
                 fontWeight: "800",
                 fontSize: 20,
                 marginTop: 10,
@@ -71,7 +71,7 @@ const Home = () => {
           </View>
           <View
             style={{
-              backgroundColor: "#5a6186",
+              backgroundColor: "#d1d5db",
               padding: 7,
               height: 80,
               width: 80,
@@ -89,8 +89,8 @@ const Home = () => {
             minHeight: 140,
             backgroundColor: "#323761",
             marginVertical: 5,
-            marginHorizontal: 5,
-            borderRadius: 10,
+            marginHorizontal: 0,
+            borderRadius: 30,
             padding: 10,
           }}
         >

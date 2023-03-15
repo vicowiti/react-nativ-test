@@ -16,6 +16,7 @@ import {
   updateStaff,
 } from "../../../../redux/staffSlice";
 import { useNavigation } from "@react-navigation/native";
+// import { sendEmail } from "../../../../services/mail/SendMail";
 
 const DeleteModal = (userData: EmployeeCardProps) => {
   const [visible, setVisible] = useState(false);
@@ -30,6 +31,7 @@ const DeleteModal = (userData: EmployeeCardProps) => {
     await dispatch<any>(deleteStaff(userData._id));
 
     await dispatch<any>(getAllStaff());
+    // await sendEmail()
     hide();
     navigate("Staff" as never);
   };
@@ -60,6 +62,7 @@ const DeleteModal = (userData: EmployeeCardProps) => {
             fontSize: 18,
             textAlign: "center",
             marginVertical: 7,
+            marginTop: "40%",
           }}
         >
           Confirm Delete

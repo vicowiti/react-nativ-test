@@ -26,6 +26,7 @@ const ViewItem = ({ data, icon, label }: ViewItemProps) => {
           backgroundColor: "#404774",
           width: "100%",
           padding: 3,
+          borderRadius: 10,
         }}
       >
         {icon}
@@ -33,7 +34,7 @@ const ViewItem = ({ data, icon, label }: ViewItemProps) => {
           {label}
         </Text>
       </View>
-      <Text style={{ color: "#fff", fontWeight: "300", fontSize: 18 }}>
+      <Text style={{ color: "#fff", fontWeight: "300", fontSize: 14 }}>
         {data}
       </Text>
     </View>
